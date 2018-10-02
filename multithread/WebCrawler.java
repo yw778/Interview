@@ -20,7 +20,7 @@ public class WebCrawler {
 	
 	public List<String> crawlUrl(String url) {
 		submitUrl(url);
-		while(visit.size() < CRAWLIMIT) {
+		while(!waitList.isEmpty() && visit.size() < CRAWLIMIT) {
 			try {
 				Thread.sleep(SLEEPTIME);
 			} catch (InterruptedException e) {
